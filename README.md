@@ -1,14 +1,6 @@
-# 🎈 [Blogo](https://blogo.site)
+# Blogo
 
-Blogo is a light and easy blogging engine. No complicated extras, just a straightforward blog. 
-
-Now, here's the twist: Blogo can also publish your posts to Nostr for backing them up and getting even more reach. **Lift your ideas higher!**
-
-## Some blogs using Blogo
-
-- [blogo.site](https://blogo.site)
-- [blog.kycnot.me](https://blog.kycnot.me)
-- [blog.kyun.host](https://blog.kyun.host)
+Blogo is a light and easy blogging engine. No complicated extras, just a straightforward blog.
 
 ## Features
 
@@ -27,9 +19,6 @@ Now, here's the twist: Blogo can also publish your posts to Nostr for backing th
 - **About page**: Easily create an About page so everyone can know more about you.
 - **Customizable**: You can fully customize the look and feel of your blog by editing the templates and CSS.
     - Uses Golang Templates, TailwindCSS and pure plain CSS.
-- **Nostr**: Publish your posts to Nostr for backing them up and getting more reach.
-    - Set your own key, or let Blogo generate one for you.
-    - Set your own relay list, or use the default list.
 - **Auto-reload**: When a new post is added, or changed, blogo automatically reloads it.
 - **SEO/SSNN Optimized** - Blogo is optimized for SEO, it contains all necessary meta tags and social sharing tags!
 - **No JS**: Blogo doesn't use any JavaScript, so it's widely compatible and secure.
@@ -37,14 +26,14 @@ Now, here's the twist: Blogo can also publish your posts to Nostr for backing th
 
 ## Self-hosting using Docker Compose
 
-The easiest way to self-host Blogo is by using Docker. 
+The easiest way to self-host Blogo is by using Docker.
 
 1. Get the docker-compose.yml:
 
 ```yml
 services:
   blogo:
-    image: pluja/blogo:latest
+    image: 265866/blogo:latest
     container_name: blogo
     restart: unless-stopped
     volumes:
@@ -119,7 +108,7 @@ Then you can just use `/static/img/your-image.jpg` in the markdown to add an ima
 
 ### Publish to Nostr
 
-If you set the `PUBLISH_TO_NOSTR` variable in the `docker-compose.yml` file to `true`, Blogo will publish your posts to Nostr. By default, Blogo will generate an ephemeral key (changes on every restart) and use a default relay list. 
+If you set the `PUBLISH_TO_NOSTR` variable in the `docker-compose.yml` file to `true`, Blogo will publish your posts to Nostr. By default, Blogo will generate an ephemeral key (changes on every restart) and use a default relay list.
 
 You can change either of these defaults by setting any of these variables in the `docker-compose.yml` file:
 
@@ -141,7 +130,7 @@ BLOGO_ANALYTICS='<script defer src="https://my.analytics.site/script.js"></scrip
 
 ## Customization
 
-You can customize the look and feel of your blog by editing the templates and CSS. 
+You can customize the look and feel of your blog by editing the templates and CSS.
 
 ### Templates
 
@@ -159,7 +148,7 @@ The templates are located in the `templates` folder:
 
 The templates are written in Golang Templates, and the CSS is written in TailwindCSS and pure CSS. Feel free to tweak them to your liking.
 
-The CSS is located in the `static/css` folder. 
+The CSS is located in the `static/css` folder.
 
 The main content makes use of TailwindCSS classes, so you can just tweak that to your liking. Note: You will need to rebuild the TailwindCSS using `npx` for new classes to apply.
 
