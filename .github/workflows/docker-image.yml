@@ -32,5 +32,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ${{ format('{0}/blogo:{1}', secrets.DOCKERHUB_USERNAME, github.event.release.tag_name) }}
+            ${{ format('{0}/blogo:{1}', secrets.DOCKERHUB_USERNAME, github.sha) }}
             ${{ format('{0}/blogo:latest', secrets.DOCKERHUB_USERNAME) }}
