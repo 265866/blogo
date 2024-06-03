@@ -1,8 +1,7 @@
 name: Docker Image CI
 
 on:
-  release:
-    types: [published]
+  push
 
 jobs:
   build:
@@ -35,4 +34,3 @@ jobs:
           tags: |
             ${{ format('{0}/blogo:{1}', secrets.DOCKERHUB_USERNAME, github.event.release.tag_name) }}
             ${{ format('{0}/blogo:latest', secrets.DOCKERHUB_USERNAME) }}
-
